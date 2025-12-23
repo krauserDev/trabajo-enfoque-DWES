@@ -1,0 +1,320 @@
+/* root colores personalizados */
+:root {
+    --color-principal: #5b9fff;
+    --color-oscuro: #1a1d29;
+    --color-secundario: #252836;
+}
+
+/* body - Fuente personalizada, fondo oscuro y color de texto por defecto */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-oscuro);
+    color: white;
+}
+
+/* Personalizar colores - Sobrescribe los colores por defecto de Bootstrap con los colores corporativos */
+
+/* Color primario personalizado (texto) */
+.text-primary {
+    color: var(--color-principal) !important;
+}
+
+/* Color de fondo primario personalizado */
+.bg-primary {
+    background-color: var(--color-principal) !important;
+}
+
+/* Botón primario con color personalizado y efecto hover */
+.btn-primary {
+    background-color: var(--color-principal);
+    border-color: var(--color-principal);
+}
+
+.btn-primary:hover {
+    background-color: #4a8eef;
+    border-color: #4a8eef;
+}
+
+/* Badge (distintivo) con color primario personalizado */
+.badge.bg-primary {
+    background-color: var(--color-principal) !important;
+}
+
+/* Navbar - Personalización del navbar oscuro y marca */
+
+.navbar-dark {
+    background-color: #0f1117 !important;
+}
+
+/* Tamaño personalizado de la marca/logo en el navbar */
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+/* Tarjetas de productos - Personalización de apariencia y efectos hover con animaciones */
+
+.card {
+    background-color: var(--color-secundario);
+    border: none;
+    /* Transición suave para efectos de transform y sombra al hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto de elevación al pasar el mouse sobre la tarjeta */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(91, 159, 255, 0.3);
+}
+
+/* Esquinas redondeadas para tarjeta de producto y evitar desbordamiento de imagen */
+.producto-card {
+    border-radius: 15px;
+    overflow: hidden; 
+}
+
+/* Texto blanco en el cuerpo de la tarjeta */
+.card-body {
+    color: white;
+}
+
+/* Título de la tarjeta en blanco y bold */
+.card-title {
+    color: white;
+    font-weight: bold;
+}
+
+/* Texto descriptivo en gris claro */
+.card-text {
+    color: #ccc;
+}
+
+/* Modal personalizado - Fondo oscuro, sin bordes y esquinas redondeadas */
+
+.modal-content {
+    background-color: var(--color-secundario);
+    border: none;
+    border-radius: 15px;
+}
+
+/* Borde superior del modal */
+.modal-header {
+    border-bottom: 1px solid #444;
+}
+
+/* Formularios - Personalización de inputs, labels y estados del formulario */
+
+/* Campo de entrada con fondo oscuro */
+.form-control {
+    background-color: #1a1d29;
+    border: 1px solid #444;
+    color: white;
+}
+
+/* Estado focus del input con borde azul y sombra personalizada */
+.form-control:focus {
+    background-color: #252836;
+    border-color: var(--color-principal);
+    color: white;
+    box-shadow: 0 0 0 0.2rem rgba(91, 159, 255, 0.25);
+}
+
+/* Color del texto placeholder en inputs */
+.form-control::placeholder {
+    color: #888;
+}
+
+/* Color de las etiquetas del formulario */
+.form-label {
+    color: #ccc;
+}
+
+/* Color del texto de ayuda del formulario */
+.form-text {
+    color: #888;
+}
+
+/* Tarjetas login y registro - Personalización específica para cards de login y registro */
+
+/* Tarjeta con esquinas redondeadas para mejor visualización */
+.card {
+    border-radius: 15px;
+}
+
+/* Tarjeta login con fondo blanco para contraste visual */
+.bg-dark body .card {
+    background-color: white;
+    color: #333;
+}
+
+/* Título de tarjeta login en color principal azul */
+.bg-dark body .card .card-title {
+    color: var(--color-principal);
+}
+
+/* Input de formulario en login/registro con fondo claro */
+.bg-dark body .card .form-control {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.bg-dark body .card .form-control:focus {
+    background-color: white;
+}
+
+/* ===== ESTILOS DE ALERTS, BADGES Y BOTONES =====
+   Personalización de componentes generales de Bootstrap */
+
+/* Alert con esquinas redondeadas para mejor visualización */
+.alert {
+    border-radius: 10px;
+}
+
+/* Badge con padding personalizado y peso de fuente */
+.badge {
+    font-weight: 500;
+    padding: 0.5em 0.8em;
+}
+
+/* Botones con esquinas redondeadas y transiciones suaves */
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+/* Botón de tamaño grande con padding y font-size aumentados */
+.btn-lg {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+}
+
+/* ===== ESTILOS DE TABLAS =====
+   Personalización de tablas para el panel administrativo */
+
+/* Tabla con texto blanco en fondo oscuro */
+.table {
+    color: white;
+}
+
+/* Encabezados de tabla con fondo secundario y bordes personalizados */
+.table thead th {
+    background-color: var(--color-secundario);
+    border-color: #444;
+}
+
+/* Filas de tabla con fondo oscuro */
+.table tbody tr {
+    background-color: var(--color-secundario);
+    border-color: #444;
+}
+
+/* Efecto hover en filas de tabla para mejorar interactividad */
+.table tbody tr:hover {
+    background-color: #2a2f3f;
+}
+
+/* Página de confirmación - Contenedor centrado verticalmente para página de éxito */
+
+/* Contenedor que ocupa toda la altura de la pantalla y centra el contenido */
+.confirmacion-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirmacion-box {
+    max-width: 600px;
+}
+
+/* Icono de confirmación - Círculo verde con icono de check para confirmación visual */
+
+/* Círculo verde (símbolo de éxito) con icono de check en el centro */
+.check-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    color: white;
+    margin: 0 auto 30px;
+}
+
+/* Animaciones - Transiciones suaves para aparición de elementos */
+
+/* Animación de entrada de tarjetas con fade-in y desplazamiento vertical */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplicar animación a todas las tarjetas */
+.card {
+    animation: fadeIn 0.5s ease;
+}
+
+/* Personalización del spinner de Bootstrap */
+
+/* Spinner con color principal azul */
+.spinner-border-primary {
+    color: var(--color-principal);
+}
+
+/* Media Queries y ajustes responsivos - Ajustes para pantallas pequeñas (tablets y móviles) */
+
+/* Ajustes para pantallas menores a 768px */
+@media (max-width: 768px) {
+    /* Reducir tamaño de navbar brand en móviles */
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    /* Reducir tamaño de encabezados principales en móviles */
+    h1 {
+        font-size: 2rem;
+    }
+    
+    /* Reducir tamaño de display-4 en móviles */
+    .display-4 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Notificaciones Toast - Personalización de mensajes emergentes de Bootstrap */
+
+/* Toast con esquinas redondeadas y apariencia mejorada */
+.toast {
+    border-radius: 10px;
+}
+
+/* Scrollbar personalizado - Estilizado visual de las barras de desplazamiento del navegador */
+
+/* Ancho de la scrollbar en navegadores webkit */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Fondo de la pista de scrollbar */
+::-webkit-scrollbar-track {
+    background: var(--color-oscuro);
+}
+
+/* Pulgar (thumb) de la scrollbar en color principal */
+::-webkit-scrollbar-thumb {
+    background: var(--color-principal);
+    border-radius: 5px;
+}
+
+/* Efecto hover en el thumb de la scrollbar */
+::-webkit-scrollbar-thumb:hover {
+    background: #4a8eef;
+}

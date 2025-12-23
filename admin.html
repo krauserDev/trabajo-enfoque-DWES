@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admin - DAVANTE SPORTS</title>
+    
+    <!-- Bootstrap CSS - Framework para estilos y componentes responsivos -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Iconos Bootstrap - Librería de iconos para la interfaz -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar - Barra de navegación del panel admin con botones de acción -->
+    <nav class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container-fluid px-4">
+            <!-- Logo del panel admin -->
+            <a class="navbar-brand fw-bold text-warning" href="admin.html">
+                <i class="bi bi-gear-fill"></i> DAVANTE SPORTS - PANEL ADMIN
+            </a>
+            <!-- Botones de navegación: volver a tienda y cerrar sesión -->
+            <div>
+                <button id="btn-volver-tienda" class="btn btn-outline-light me-2">
+                    <i class="bi bi-shop"></i> Volver a la tienda
+                </button>
+                <button id="btn-logout" class="btn btn-outline-danger">
+                    <i class="bi bi-box-arrow-right"></i> Cerrar Sesión
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal con sistema de pestañas para gestión de productos y usuarios -->
+    <main class="container-fluid my-4">
+        
+        <!-- Sistema de pestañas (tabs) Bootstrap para cambiar entre secciones -->
+        <ul class="nav nav-tabs nav-fill mb-4" role="tablist">
+            <!-- Pestaña 1: Gestión de Productos -->
+            <li class="nav-item" role="presentation">
+                <button 
+                    class="nav-link active" 
+                    id="productos-tab" 
+                    data-bs-toggle="tab" 
+                    data-bs-target="#tab-productos" 
+                    type="button"
+                >
+                    <i class="bi bi-box-seam"></i> Gestión de Productos
+                </button>
+            </li>
+            <!-- Pestaña 2: Gestión de Usuarios -->
+            <li class="nav-item" role="presentation">
+                <button 
+                    class="nav-link" 
+                    id="usuarios-tab" 
+                    data-bs-toggle="tab" 
+                    data-bs-target="#tab-usuarios" 
+                    type="button"
+                >
+                    <i class="bi bi-people"></i> Gestión de Usuarios
+                </button>
+            </li>
+        </ul>
+
+        <!-- Contenido de las pestañas -->
+        <div class="tab-content">
+            
+            <!-- TAB 1: Gestión de productos - Permite crear, editar y eliminar productos -->
+            <div class="tab-pane fade show active" id="tab-productos" role="tabpanel">
+                
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Encabezado con título y botón para crear nuevo producto -->
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h2 class="text-primary">
+                                <i class="bi bi-box-seam-fill"></i> Productos
+                            </h2>
+                            <button id="btn-nuevo-producto" class="btn btn-primary btn-lg">
+                                <i class="bi bi-plus-circle"></i> Nuevo Producto
+                            </button>
+                        </div>
+
+                        <!-- Formulario de producto (oculto por defecto, se muestra al hacer clic en "Nuevo Producto") -->
+                        <div id="form-producto" class="card mb-4 d-none">
+                            <div class="card-header bg-primary text-white">
+                                <h5 class="mb-0" id="form-titulo">
+                                    <i class="bi bi-pencil-square"></i> Nuevo Producto
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <form id="producto-form">
+                                    <!-- Campo oculto para almacenar el ID del producto a editar -->
+                                    <input type="hidden" name="id" id="producto-id">
+                                    
+                                    <div class="row g-3">
+                                        <!-- Campo Nombre del producto -->
+                                        <div class="col-md-6">
+                                            <label for="producto-nombre" class="form-label">
+                                                <i class="bi bi-tag"></i> Nombre del producto *
+                                            </label>
+                                            <input 
+                                                type="text" 
+                                                class="form-control" 
+                                                id="producto-nombre"
+                                                name="nombre" 
+                                                placeholder="Ej: Air Max 270" 
+                                                required
+                                            >
+                                        </div>
+                                        
+                                        <!-- Campo Marca del producto -->
+                                        <div class="col-md-6">
+                                            <label for="producto-marca" class="form-label">
+                                                <i class="bi bi-award"></i> Marca *
+                                            </label>
+                                            <input 
+                                                type="text" 
+                                                class="form-control" 
+                                                id="producto-marca"
+                                                name="marca" 
+                                                placeholder="Ej: Nike" 
+                                                required
+                                            >
+                                        </div>
+                                        
+                                        <!-- Campo Precio del producto -->
+                                        <div class="col-md-4">
+                                            <label for="producto-precio" class="form-label">
+                                                <i class="bi bi-currency-euro"></i> Precio *
+                                            </label>
+                                            <input 
+                                                type="number" 
+                                                class="form-control" 
+                                                id="producto-precio"
+                                                name="precio" 
+                                                placeholder="149.99" 
+                                                step="0.01" 
+                                                required
+                                            >
+                                        </div>
+                                        
+                                        <!-- Campo Stock del producto -->
+                                        <div class="col-md-4">
+                                            <label for="producto-stock" class="form-label">
+                                                <i class="bi bi-box"></i> Stock *
+                                            </label>
+                                            <input 
+                                                type="number" 
+                                                class="form-control" 
+                                                id="producto-stock"
+                                                name="stock" 
+                                                placeholder="10" 
+                                                required
+                                            >
+                                        </div>
+                                        
+                                        <!-- Campo URL de imagen del producto -->
+                                        <div class="col-md-4">
+                                            <label for="producto-imagen" class="form-label">
+                                                <i class="bi bi-image"></i> URL Imagen
+                                            </label>
+                                            <input 
+                                                type="text" 
+                                                class="form-control" 
+                                                id="producto-imagen"
+                                                name="imagen" 
+                                                placeholder="images/productos/..."
+                                            >
+                                        </div>
+                                        
+                                        <!-- Campo Descripción del producto -->
+                                        <div class="col-12">
+                                            <label for="producto-descripcion" class="form-label">
+                                                <i class="bi bi-text-paragraph"></i> Descripción
+                                            </label>
+                                            <textarea 
+                                                class="form-control" 
+                                                id="producto-descripcion"
+                                                name="descripcion" 
+                                                rows="3" 
+                                                placeholder="Descripción detallada del producto..."
+                                            ></textarea>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Botones del formulario: Guardar y Cancelar -->
+                                    <div class="mt-4">
+                                        <button type="submit" id="btn-guardar-producto" class="btn btn-success me-2">
+                                            <i class="bi bi-check-circle"></i> Guardar
+                                        </button>
+                                        <button type="button" id="btn-cancelar-producto" class="btn btn-secondary">
+                                            <i class="bi bi-x-circle"></i> Cancelar
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Tabla de productos con información de cada producto y acciones -->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover table-dark table-striped align-middle" id="tabla-productos">
+                                        <thead class="table-primary">
+                                            <tr>
+                                                <th width="5%">ID</th>
+                                                <th width="25%">Nombre</th>
+                                                <th width="15%">Marca</th>
+                                                <th width="10%">Precio</th>
+                                                <th width="10%">Stock</th>
+                                                <th width="15%">Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- Se carga con JavaScript desde el servidor -->
+                                            <tr>
+                                                <td colspan="6" class="text-center">
+                                                    <div class="spinner-border text-primary" role="status">
+                                                        <span class="visually-hidden">Cargando...</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- TAB 2: Gestión de usuarios - Permite crear, editar y eliminar usuarios -->
+            <div class="tab-pane fade" id="tab-usuarios" role="tabpanel">
+                
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Encabezado con título y botón para crear nuevo usuario -->
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h2 class="text-primary">
+                                <i class="bi bi-people-fill"></i> Usuarios
+                            </h2>
+                            <button id="btn-nuevo-usuario" class="btn btn-primary btn-lg">
+                                <i class="bi bi-person-plus"></i> Nuevo Usuario
+                            </button>
+                        </div>
+
+                        <!-- Formulario de usuario (oculto por defecto, se muestra al hacer clic en "Nuevo Usuario") -->
+                        <div id="form-usuario" class="card mb-4 d-none">
+                            <div class="card-header bg-primary text-white">
+                                <h5 class="mb-0" id="form-usuario-titulo">
+                                    <i class="bi bi-pencil-square"></i> Nuevo Usuario
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <form id="usuario-form">
+                                    <!-- Campo oculto para almacenar el ID del usuario a editar -->
+                                    <input type="hidden" name="id" id="usuario-id">
+                                    
+                                    <div class="row g-3">
+                                        <!-- Campo Nombre completo del usuario -->
+                                        <div class="col-md-6">
+                                            <label for="usuario-nombre" class="form-label">
+                                                <i class="bi bi-person"></i> Nombre completo *
+                                            </label>
+                                            <input 
+                                                type="text" 
+                                                class="form-control" 
+                                                id="usuario-nombre"
+                                                name="nombre" 
+                                                placeholder="Juan Pérez" 
+                                                required
+                                            >
+                                        </div>
+                                        
+                                        <!-- Campo Email del usuario -->
+                                        <div class="col-md-6">
+                                            <label for="usuario-email" class="form-label">
+                                                <i class="bi bi-envelope"></i> Email *
+                                            </label>
+                                            <input 
+                                                type="email" 
+                                                class="form-control" 
+                                                id="usuario-email"
+                                                name="email" 
+                                                placeholder="usuario@email.com" 
+                                                required
+                                            >
+                                        </div>
+                                        
+                                        <!-- Campo Contraseña del usuario (opcional al editar) -->
+                                        <div class="col-md-6">
+                                            <label for="usuario-password" class="form-label">
+                                                <i class="bi bi-lock"></i> Contraseña
+                                            </label>
+                                            <input 
+                                                type="password" 
+                                                class="form-control" 
+                                                id="usuario-password"
+                                                name="password" 
+                                                placeholder="Dejar vacío para no cambiar"
+                                            >
+                                            <div class="form-text">Solo necesario al crear o cambiar contraseña</div>
+                                        </div>
+                                        
+                                        <!-- Campo Tipo de usuario (Cliente o Admin) -->
+                                        <div class="col-md-6">
+                                            <label for="usuario-tipo" class="form-label">
+                                                <i class="bi bi-shield-check"></i> Tipo de usuario *
+                                            </label>
+                                            <select class="form-select" id="usuario-tipo" name="tipo" required>
+                                                <option value="cliente">Cliente</option>
+                                                <option value="admin">Administrador</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Botones del formulario: Guardar y Cancelar -->
+                                    <div class="mt-4">
+                                        <button type="submit" id="btn-guardar-usuario" class="btn btn-success me-2">
+                                            <i class="bi bi-check-circle"></i> Guardar
+                                        </button>
+                                        <button type="button" id="btn-cancelar-usuario" class="btn btn-secondary">
+                                            <i class="bi bi-x-circle"></i> Cancelar
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Tabla de usuarios con información de cada usuario y acciones -->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover table-dark table-striped align-middle" id="tabla-usuarios">
+                                        <thead class="table-primary">
+                                            <tr>
+                                                <th width="5%">ID</th>
+                                                <th width="25%">Nombre</th>
+                                                <th width="30%">Email</th>
+                                                <th width="15%">Tipo</th>
+                                                <th width="15%">Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- Se carga con JavaScript desde el servidor -->
+                                            <tr>
+                                                <td colspan="5" class="text-center">
+                                                    <div class="spinner-border text-primary" role="status">
+                                                        <span class="visually-hidden">Cargando...</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </main>
+
+    <!--Bootstrap JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Script principal del panel admin - Maneja la lógica de gestión de productos y usuarios -->
+    <script src="admin.js"></script>
+</body>
+</html>

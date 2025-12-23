@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra Confirmada - DAVANTE SPORTS</title>
+    
+    <!-- Bootstrap CSS - Framework para estilos y componentes responsivos -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Iconos Bootstrap - Librería de iconos para la interfaz -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-dark">
+
+    <div class="container">
+        <div class="row justify-content-center align-items-center min-vh-100">
+            <div class="col-12 col-md-8 col-lg-6">
+                
+                <!-- Tarjeta de confirmación de compra centrada en la pantalla -->
+                <div class="card shadow-lg border-0 text-center">
+                    <div class="card-body p-5">
+                        
+                        <!-- Icono de éxito que indica compra realizada -->
+                        <div class="check-icon mb-4">
+                            <i class="bi bi-check-lg"></i>
+                        </div>
+                        
+                        <!-- Título de éxito -->
+                        <h1 class="card-title display-4 fw-bold text-success mb-4">
+                            ¡COMPRA REALIZADA!
+                        </h1>
+                        
+                        <!-- Subtítulo -->
+                        <p class="lead mb-4">
+                            Tu pedido ha sido procesado exitosamente
+                        </p>
+                        
+                        <!-- Contenedor donde se cargan los detalles del pedido dinámicamente -->
+                        <div id="pedido-info" class="text-start">
+                            <!-- Spinner de carga mientras se obtienen los detalles del pedido -->
+                            <div class="text-center">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="visually-hidden">Cargando...</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Botón para volver a la tienda principal -->
+                        <button id="btn-volver-tienda" class="btn btn-primary btn-lg mt-4">
+                            <i class="bi bi-shop"></i> Volver a la tienda
+                        </button>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Script principal de la aplicación - Maneja la lógica de la página de confirmación -->
+    <script src="script.js"></script>
+</body>
+</html>
