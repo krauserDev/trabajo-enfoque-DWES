@@ -10,11 +10,12 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// Credenciales de conexión a MySQL
-$host = 'localhost';
-$dbname = 'tienda_zapatillas';
-$username = 'root';  
-$password = '';      
+// Credenciales de conexión a MySQL - Byethost (Servidor gratuito para alojar webs dinámicas)
+
+$host = 'sql212.byethost12.com';
+$dbname = 'b12_40775165_tienda_zapatillas';  
+$username = 'b12_40775165';  
+$password = '8TAmHE9KnHP#VDX';       
 
 // Conexión PDO a la base de datos
 $pdo = null;
