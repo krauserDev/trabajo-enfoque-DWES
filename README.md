@@ -16,7 +16,7 @@ https://davantesports.byethost12.com/
 
 ## Credenciales de acceso
 
-La aplicación dispone de dos tipos de usuario: **Administrador** y **Cliente**.
+La aplicación dispone de dos tipos de usuario: Administrador y Cliente.
 
 ### Usuario Administrador
 
