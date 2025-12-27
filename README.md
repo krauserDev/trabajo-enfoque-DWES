@@ -1,14 +1,51 @@
-# Trabajo de enfoque del módulo DWES del FP superior de DAW.
-Este es mi trabajo de enfoque de módulo profesional Desarrollo web en entorno servidor. Trata de una tienda online de zapatillas de deporte.
+# DAVANTE SPORTS – Tienda Online de Zapatillas
 
-# Como ejecutar la aplicación en tu máquina.
-1. Debes tener instalado Xampp y activar Apache y MySQL.
-2. Descarga el proyecto del repositorio de GitHub y mételo en la carpeta htdocs de tu máquina local.
-3. Accede a phpMyAdmin en la siguiente URL: http://localhost/phpmyadmin
-4. Crea una base de datos con el nombre "tienda_zapatillas". Después importa el archivo database.sql incluido en el repositorio.
-5. La configuración de conexión a MySQL debería estar preparada por defecto. De no ser así, debes acceder al archivo api/config.php e introduce los siguientes datos de conexión:
-$host = 'localhost';
-$dbname = 'tienda_zapatillas';
-$username = 'root';
-$password = '';
-6. Por último, abre el navegador e introduce la URL donde esté alojado el proyecto. Por ejemplo: http://localhost/trabajoDWES/index.html
+Este es mi trabajo de enfoque de la asignatura DWES (Desarrollo Web en Entorno Servidor).  
+La aplicación consiste en una tienda online de zapatillas con gestión de usuarios, carrito de la compra, pedidos y panel de administración, implementada siguiendo una arquitectura de tres capas.
+
+---
+
+## Alojamiento del proyecto
+
+La aplicación se encuentra alojada en un servidor web gratuito de ByetHost, por lo que no es necesario instalar ni configurar nada para poder probarla.
+
+URL de acceso al proyecto:  
+https://davantesports.byethost12.com/  
+
+---
+
+## Credenciales de acceso
+
+La aplicación dispone de dos tipos de usuario: **Administrador** y **Cliente**.
+
+### Usuario Administrador
+
+Permite:
+- Gestión de usuarios (crear, modificar y eliminar)
+- Gestión de productos (crear, modificar y eliminar)
+- Acceso al panel de administración
+
+### Usuario Cliente - Es posible crear una nueva cuenta de usuario en la aplicación. Aquí dejo una cuenta ya creada para hacer login directamente:
+- **Email:** `usuario@davante.com`
+- **Contraseña:** `usuario123`
+
+Permite:
+- Navegar por el catálogo de productos
+- Añadir productos al carrito
+- Confirmar pedidos
+
+---
+
+## Tecnologías utilizadas
+
+- **Frontend:** HTML5, CSS3, JavaScript, Bootstrap
+- **Backend:** PHP
+- **Base de datos:** MySQL
+- **Servidor:** ByetHost (hosting gratuito)
+- **Control de versiones:** GitHub
+
+---
+
+## Base de datos
+
+La base de datos está alojada en el servidor de ByetHost y ya se encuentra configurada.
