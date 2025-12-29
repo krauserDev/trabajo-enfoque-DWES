@@ -117,18 +117,18 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `nombre`, `marca`, `precio`, `imagen`, `descripcion`, `stock`, `activo`) VALUES
-(1, 'Air Max 270', 'Nike', 149.99, 'http://localhost/prj/trabajoServidor/images/productos/nike-air-max.jpg', 'Zapatillas deportivas con amortiguación Air', 15, 1),
-(2, 'Ultra Boost', 'Adidas', 179.99, 'http://localhost/prj/trabajoServidor/images/productos/adidas-ultraboost.jpg', 'Máxima amortiguación y retorno de energía', 10, 1),
-(3, 'Gel-Kayano 29', 'Asics', 159.99, 'http://localhost/prj/trabajoServidor/images/productos/asics-gel-kayano.jpg', 'Zapatillas para running profesional', 8, 1),
-(4, 'Classic Leather', 'Reebok', 89.99, 'http://localhost/prj/trabajoServidor/images/productos/reebok-classic.jpg', 'Estilo clásico y atemporal', 20, 1),
-(5, '574 Core', 'New Balance', 99.99, 'http://localhost/prj/trabajoServidor/images/productos/newbalance-574.jpg', 'Comodidad para uso diario', 12, 1),
-(6, 'Suede Classic', 'Puma', 79.99, 'http://localhost/prj/trabajoServidor/images/productos/puma-suede.jpg', 'Diseño icónico en gamuza', 18, 1),
-(7, 'React Infinity Run', 'Nike', 139.99, 'http://localhost/prj/trabajoServidor/images/productos/nike-react.jpg', 'Zapatillas de running con amortiguación React.', 15, 1),
-(8, 'Superstar Classic', 'Adidas', 89.99, 'http://localhost/prj/trabajoServidor/images/productos/adidas-superstar.jpg', 'Icónicas zapatillas urbanas.', 25, 1),
-(9, 'Air Jordan 1', 'Nike', 189.99, 'http://localhost/prj/trabajoServidor/images/productos/jordan-1.jpg', 'Zapatillas legendarias de baloncesto.', 8, 1),
-(10, 'Old Skool', 'Vans', 74.99, 'http://localhost/prj/trabajoServidor/images/productos/vans-oldskool.jpg', 'Clásicas zapatillas de skate.', 28, 1),
-(11, 'Chuck Taylor', 'Converse', 64.99, 'http://localhost/prj/trabajoServidor/images/productos/converse-chuck.jpg', 'El clásico absoluto desde 1917.', 40, 1),
-(12, 'Clifton 10', 'Hoka', 149.99, 'http://localhost/prj/trabajoServidor/images/productos/hoka-clifton-10.jpg', 'El Clásico Renace con Comodidad Superior.', 24, 1);
+(1, 'Air Max 270', 'Nike', 149.99, 'images/productos/nike-air-max.jpg', 'Zapatillas deportivas con amortiguación Air', 15, 1),
+(2, 'Ultra Boost', 'Adidas', 179.99, 'images/productos/adidas-ultraboost.jpg', 'Máxima amortiguación y retorno de energía', 10, 1),
+(3, 'Gel-Kayano 29', 'Asics', 159.99, 'images/productos/asics-gel-kayano.jpg', 'Zapatillas para running profesional', 8, 1),
+(4, 'Classic Leather', 'Reebok', 89.99, 'images/productos/reebok-classic.jpg', 'Estilo clásico y atemporal', 20, 1),
+(5, '574 Core', 'New Balance', 99.99, 'images/productos/newbalance-574.jpg', 'Comodidad para uso diario', 12, 1),
+(6, 'Suede Classic', 'Puma', 79.99, 'images/productos/puma-suede.jpg', 'Diseño icónico en gamuza', 18, 1),
+(7, 'React Infinity Run', 'Nike', 139.99, 'images/productos/nike-react.jpg', 'Zapatillas de running con amortiguación React.', 15, 1),
+(8, 'Superstar Classic', 'Adidas', 89.99, 'images/productos/adidas-superstar.jpg', 'Icónicas zapatillas urbanas.', 25, 1),
+(9, 'Air Jordan 1', 'Nike', 189.99, 'images/productos/jordan-1.jpg', 'Zapatillas legendarias de baloncesto.', 8, 1),
+(10, 'Old Skool', 'Vans', 74.99, 'images/productos/vans-oldskool.jpg', 'Clásicas zapatillas de skate.', 28, 1),
+(11, 'Chuck Taylor', 'Converse', 64.99, 'images/productos/converse-chuck.jpg', 'El clásico absoluto desde 1917.', 40, 1),
+(12, 'Clifton 10', 'Hoka', 149.99, 'images/productos/hoka-clifton-10.jpg', 'El Clásico Renace con Comodidad Superior.', 24, 1);
 
 -- --------------------------------------------------------
 
@@ -256,3 +256,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
